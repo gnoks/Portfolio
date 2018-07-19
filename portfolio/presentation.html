@@ -15,7 +15,6 @@
 
         body {
             width: 100%;
-            height: 100vh;
             margin: 0 auto;
             font: 1em 'Raleway', sans-serif;
             color: white;
@@ -31,8 +30,8 @@
         /* MENU HEADER */
 
         /* ------------------------------------------------------- */
-        
-        header{
+
+        header {
             font-size: 1.5em;
         }
 
@@ -49,7 +48,7 @@
         nav {
             width: 60%;
             max-width: 500px;
-           
+
         }
 
         aside {
@@ -59,7 +58,55 @@
 
         .flex a {
             flex: 1 0 auto;
+            -webkit-animation: show-menu-translate .4s cubic-bezier(0,.58,0,1) forwards,show-menu-opacity 1s ease-out forwards;
+            animation: show-menu-translate .4s cubic-bezier(0,.58,0,1) forwards,show-menu-opacity 1s ease-out forwards;
         }
+
+        /* ANIM TEXTE MENU ACTUALISATION */
+        /* ------------------------------------------------------- */
+
+        @keyframes show-menu-translate {
+                    0% {
+                -webkit-transform: translateY(40px);
+                transform: translateY(40px);
+               
+            }
+                    100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                
+            }
+        }
+
+         @keyframes show-menu-opacity {
+                    0% {
+                opacity: 0;    
+            }
+                    100% {
+                opacity: 1;            
+            }
+        }
+
+        .flex nav a:nth-child(2){
+            animation-delay: .05s
+        }
+
+        .flex nav a:last-child{
+            animation-delay: .1s
+        }
+
+        .flex aside a:first-child{
+            animation-delay: .15s
+        }
+
+        .flex aside a:nth-child(2){
+            animation-delay: .2s
+        }
+
+        .flex aside a:last-child{
+            animation-delay: .25s
+        }
+
 
         .flex nav a {
             text-align: left
@@ -79,6 +126,7 @@
 
         .menu-checkbox {
             display: none;
+
         }
 
         .iconeMenu {
@@ -88,9 +136,8 @@
             position: relative;
             top: 100px;
             left: 80px;
-            
-        }
 
+        }
 
         .iconeMenu div {
             width: 60%;
@@ -109,9 +156,21 @@
             height: 100%;
             background: #fff;
             position: absolute;
-            transition: all 0.3s 0.3s;  
+            transition: all 0.3s 0.3s;
+            -webkit-animation: icone-menu 0.3s linear;
+            animation: icone-menu 0.3s linear;
         }
 
+        @keyframes icone-menu {
+            0% {
+                width: 0;
+                height: 100%
+            }
+            100% {
+                width: 100%;
+                height: 100%;
+            }
+        }
 
         .iconeMenu div::after {
             top: -400%;
@@ -120,7 +179,6 @@
         .iconeMenu div::before {
             top: 400%;
         }
-
 
         .menu-checkbox:checked~.iconeMenu .left {
             background-color: red;
@@ -146,10 +204,6 @@
             transition: all 0.3s;
         }
 
-
-
-
-
         /* DECO MENU */
 
         /* ------------------------------------------------------- */
@@ -160,54 +214,58 @@
 
         @media screen and ( max-width: 1000px) {
 
-            .bkg-menu {
-                
+            .menu-checkbox:checked~.menu {
+                position: absolute;
+                top: 0px;
+                left: 0px;
             }
 
+            .iconeMenu {
+                z-index: 1000;
+            }
             .menu {
+                transition: .5s;
+                position: absolute;
+                top: 0px;
+                left: -1000px;
                 visibility: hidden;
                 width: 100%;
-                height: 100vh;
+                height: 100%;
                 flex-direction: column;
-                margin:0 auto;
-                justify-content:center;
+                margin: 0 auto;
+                justify-content: center;
                 background-color: #0017cf;
             }
-
-            .menu nav{
+            .menu nav {
+                line-height: 5em;
+            }
+            .menu nav,
+            .menu aside {
+                flex-direction: column;
+            }
+            .menu nav a,
+            .menu aside a {
+                text-align: center;
                 line-height: 5em;
             }
 
-            .menu nav, .menu aside{
-                flex-direction: column;
-            }
-
-            .menu nav a, .menu aside a{
-               text-align: center;
-               line-height: 5em;
-            }
-
-
-           
-
         }
-
 
         /* si > 800px */
 
         @media screen and ( min-width: 1001px) {
-
             .iconeMenu {
                 display: none
             }
 
-           
-
         }
+        
+       
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="bkg-menu">
             <input type="checkbox" class="menu-checkbox" id="menu-checkbox">
@@ -218,7 +276,7 @@
             <div class="menu flex">
                 <nav class="flex">
                     <!-- <a href=""><img src="" alt="gnoks"></a> -->
-                    <a href="">présentation</a>
+                    <a href="">hello</a>
                     <a href="">projets</a>
                     <a href="">curriculum</a>
                 </nav>
@@ -237,6 +295,7 @@
     <footer>
 
     </footer>
+
 </body>
 
 </html>
