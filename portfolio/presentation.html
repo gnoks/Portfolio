@@ -18,8 +18,7 @@
             margin: 0 auto;
             font: 1em 'Raleway', sans-serif;
             color: white;
-            background-color: #000025/*#ff5851*/
-            ;
+            background-color: #1f1f1f/*#000025*/;
         }
 
         a {
@@ -31,8 +30,10 @@
 
         /* ------------------------------------------------------- */
 
-        header {
+        header, main {
             font-size: 1.5em;
+            /* margin:0 4%; */
+            padding: 70px;
         }
 
         .flex {
@@ -41,80 +42,75 @@
 
         .menu {
             align-items: center;
-            margin: 100px;
             justify-content: space-between;
+            text-align: center;
         }
 
         nav {
-            width: 60%;
+            width: 33%;
             max-width: 500px;
-
+            align-items: center;
+            justify-content: space-between;
         }
 
         aside {
-            width: 40%;
+            width: 33%;
             max-width: 500px;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .flex a {
-            flex: 1 0 auto;
-            -webkit-animation: show-menu-translate .4s cubic-bezier(0,.58,0,1) forwards,show-menu-opacity 1s ease-out forwards;
-            animation: show-menu-translate .4s cubic-bezier(0,.58,0,1) forwards,show-menu-opacity 1s ease-out forwards;
+            -webkit-animation: show-menu-translate .4s cubic-bezier(0, .58, 0, 1) forwards, show-menu-opacity 1s ease-out forwards;
+            animation: show-menu-translate .4s cubic-bezier(0, .58, 0, 1) forwards, show-menu-opacity 1s ease-out forwards;
         }
 
         /* ANIM TEXTE MENU ACTUALISATION */
+
         /* ------------------------------------------------------- */
 
         @keyframes show-menu-translate {
-                    0% {
-                -webkit-transform: translateY(40px);
-                transform: translateY(40px);
-               
+            0% {
+                -webkit-transform: translateY(50px);
+                transform: translateY(50px);
+
             }
-                    100% {
+            100% {
                 -webkit-transform: translateY(0);
                 transform: translateY(0);
-                
+
             }
         }
 
-         @keyframes show-menu-opacity {
-                    0% {
-                opacity: 0;    
+        @keyframes show-menu-opacity {
+            0% {
+                opacity: 0;
             }
-                    100% {
-                opacity: 1;            
+            100% {
+                opacity: 1;
             }
         }
 
-        .flex nav a:nth-child(2){
+        .flex nav a:nth-child(2) {
             animation-delay: .05s
         }
 
-        .flex nav a:last-child{
+        .flex nav a:last-child {
             animation-delay: .1s
         }
 
-        .flex aside a:first-child{
+        .flex aside a:first-child {
             animation-delay: .15s
         }
 
-        .flex aside a:nth-child(2){
+        .flex aside a:nth-child(2) {
             animation-delay: .2s
         }
 
-        .flex aside a:last-child{
+        .flex aside a:last-child {
             animation-delay: .25s
         }
 
-
-        .flex nav a {
-            text-align: left
-        }
-
-        .flex aside a {
-            text-align: right;
-        }
 
         /* GESTION MENU CHECKBOX */
 
@@ -133,9 +129,9 @@
             width: 50px;
             height: 25px;
             display: block;
-            position: relative;
-            top: 100px;
-            left: 80px;
+            position: absolute;
+            top: 116px;
+            left: 63px;
 
         }
 
@@ -181,26 +177,26 @@
         }
 
         .menu-checkbox:checked~.iconeMenu .left {
-            background-color: red;
+            background-color: #206bff;
             transition: 0.3s 0.3s;
             transform: rotate(45deg)
         }
 
         .menu-checkbox:checked~.iconeMenu .right {
-            background-color: red;
+            background-color: #206bff;
             transition: 0.3s 0.3s;
             transform: rotate(-45deg)
         }
 
         .menu-checkbox:checked~.iconeMenu div::after {
             width: 0px;
-            background-color: red;
+            background-color: #206bff;
             transition: all 0.3s;
         }
 
         .menu-checkbox:checked~.iconeMenu div::before {
             width: 0px;
-            background-color: red;
+            background-color: #206bff;
             transition: all 0.3s;
         }
 
@@ -216,8 +212,8 @@
 
             .menu-checkbox:checked~.menu {
                 position: absolute;
-                top: 0px;
-                left: 0px;
+                top: 0;
+                left: 0;
             }
 
             .iconeMenu {
@@ -230,23 +226,34 @@
                 left: -1000px;
                 visibility: hidden;
                 width: 100%;
-                height: 100%;
+                height: 100vh;
+                min-height: 300px;
                 flex-direction: column;
                 margin: 0 auto;
                 justify-content: center;
-                background-color: #0017cf;
-            }
-            .menu nav {
-                line-height: 5em;
+                background-color: #141618;
+                /*#0017cf;*/
             }
             .menu nav,
             .menu aside {
                 flex-direction: column;
+                padding: 0;
+
+            }
+            .menu nav {
+                padding-top: 100px;
+                align-items: center;
             }
             .menu nav a,
             .menu aside a {
                 text-align: center;
-                line-height: 5em;
+                padding: 1.5em 0;
+
+            }
+
+            .menu>a {
+                align-items: center;
+                display: inline-block;
             }
 
         }
@@ -259,15 +266,12 @@
             }
 
         }
-        
-       
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="bkg-menu">
             <input type="checkbox" class="menu-checkbox" id="menu-checkbox">
             <label for="menu-checkbox" class="iconeMenu">
                 <div class="left"></div>
@@ -275,22 +279,25 @@
             </label>
             <div class="menu flex">
                 <nav class="flex">
-                    <!-- <a href=""><img src="" alt="gnoks"></a> -->
                     <a href="">hello</a>
                     <a href="">projets</a>
                     <a href="">curriculum</a>
                 </nav>
+                <a href="">
+                    <img src="img\logo.png" alt="gnoks">
+                </a>
                 <aside class="flex">
                     <a href="">dribbble</a>
                     <a href="">github</a>
                     <a href="">contact</a>
                 </aside>
             </div>
-        </div>
     </header>
     <main>
-        <h1></h1>
-        <article></article>
+        <section>
+            <h1>Hello,....</h1>
+            <article></article>
+        </section>
     </main>
     <footer>
 
