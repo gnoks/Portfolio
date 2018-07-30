@@ -10,6 +10,13 @@
         crossorigin="anonymous">
     <title>Portfolio</title>
     <style>
+
+        /* ------------------------------------------------------- */
+
+        /* RESET + MISE EN FORME */
+
+        /* ------------------------------------------------------- */
+
         * {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -23,6 +30,17 @@
             color: #e6e6e4;
             background-color: #161616;
         }
+
+        a {
+            text-decoration: none;
+            color: #e6e6e4;
+        }
+
+        /* ------------------------------------------------------- */
+
+        /* BACKGROUND + ANIM NOISE */
+
+        /* ------------------------------------------------------- */
 
         .bkg::before {
             content: "";
@@ -107,19 +125,15 @@
             }
         }
 
-        a {
-            text-decoration: none;
-            color: #e6e6e4;
-        }
+        /* ------------------------------------------------------- */
 
-        /* MENU HEADER */
+        /* MENU HEADER - MISE EN FORME */
 
         /* ------------------------------------------------------- */
 
         header,
         main {
             font-size: 1.5em;
-            /* margin:0 4%; */
             padding: 70px;
         }
 
@@ -164,15 +178,19 @@
             opacity: .8;
         }
 
+        
+        /* ------------------------------------------------------- */
+        
+        /* ANIMATION MENU ACTUALISATION */
+
+        /* ------------------------------------------------------- */
+
         .flex a {
             -webkit-animation: show-menu-translate .5s cubic-bezier(0, 1.45, 1, 0.07) forwards, show-menu-opacity 2s ease-out forwards;
             animation: show-menu-translate .5s cubic-bezier(0, 1.45, 1, 0.07) forwards, show-menu-opacity 2s ease-out forwards;
 
         }
 
-        /* ANIM TEXTE MENU ACTUALISATION */
-
-        /* ------------------------------------------------------- */
 
         @-webkit-keyframes show-menu-translate {
             0% {
@@ -265,8 +283,9 @@
             animation-delay: .35s
         }
 
+        /* ------------------------------------------------------- */
 
-        /* GESTION MENU CHECKBOX */
+        /* GESTION MENU CHECKBOX - HAMBURGER ANIMATION */
 
         /* ------------------------------------------------------- */
 
@@ -387,7 +406,7 @@
 
         /*-----------------------------------------------------------------*/
 
-        /* EFFET LOGO */
+        /* ANIMATION LOGO GLITCH - FILTRE SVG */
 
         /*-----------------------------------------------------------------*/
 
@@ -428,127 +447,12 @@
             }
         }
 
+        /*-----------------------------------------------------------------*/
 
+        /* LIEN MENU - HOVER */
 
-        /* .menu>a::after {
-            content: '';
-            background: url('img/logo_effet.png') no-repeat;
-            display: block;
-            background-size: cover;
-            position: absolute;
-            width: 90px;
-            height: 99px;
-            top: 0;
-            animation: logo-effect-1 .5s ease-in-out alternate-reverse infinite;
-            opacity: 0;
-            z-index: -2;
-        }
+        /*-----------------------------------------------------------------*/
 
-        .menu>a::before {
-            content: '';
-            background: url('img/logo_effet_2.png') no-repeat;
-            display: block;
-            background-size: cover;
-            position: absolute;
-            width: 90px;
-            height: 99px;
-            top: 0;
-            animation: logo-effect-2 .5s ease-in-out alternate-reverse infinite;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        @keyframes logo-effect-1 {
-            0% {
-                transform: translateX(0);
-                opacity: 0;
-
-            }
-
-            10% {
-                transform: translateX(-5px);
-                opacity: .5;
-
-            }
-
-            20% {
-                transform: translateX(10px);
-                opacity: .2;
-
-            }
-
-            30% {
-                transform: translateX(0px);
-                opacity: 0;
-
-            }
-
-            40% {
-                transform: translateX(-5px);
-                opacity: .2;
-
-            }
-
-            50% {
-                transform: translateX(5px);
-                opacity: .1;
-
-            }
-
-
-            100% {
-                transform: translateX(0px);
-                opacity: 0;
-
-            }
-        }
-
-        @keyframes logo-effect-2 {
-            0% {
-                transform: translateX(0);
-                opacity: 0;
-
-            }
-
-            10% {
-                transform: translateX(5px);
-                opacity: .5;
-
-            }
-
-            20% {
-                transform: translateX(-10px);
-                opacity: .2;
-
-            }
-
-            30% {
-                transform: translateX(0px);
-                opacity: 0;
-
-            }
-
-            40% {
-                transform: translateX(5px);
-                opacity: .2;
-
-            }
-
-            50% {
-                transform: translateX(-5px);
-                opacity: .1;
-
-            }
-
-
-            100% {
-                transform: translateX(0px);
-                opacity: 0;
-
-            }
-        } */
-        
-        
         nav:hover, aside:hover{
             opacity: 1;
             transition: linear .3s;
@@ -619,99 +523,108 @@
             }
         }
 
-.glitching:after {
-    content: attr(data-text);
-    position: absolute;
-    left: -1px;
-    text-shadow: 1px 0 black;
-    top: 0;
-    background: transparent;
-    overflow: hidden;
-    animation: noise-anim 1s infinite linear alternate-reverse;
-    width: 100%;
-}
+        /*-----------------------------------------------------------------*/
+
+        /* LIEN MENU - GLITCH EFFECT */
+
+        /*-----------------------------------------------------------------*/
+
+        .glitching:after {
+            content: attr(data-text);
+            position: absolute;
+            left: -1px;
+            text-shadow: 1px 0 black;
+            top: 0;
+            background: transparent;
+            overflow: hidden;
+            animation: noise-anim 1s infinite linear alternate-reverse;
+            width: 100%;
+        }
 
         @-webkit-keyframes noise-anim {
-  0% {
-    clip: rect(68px, 9999px, 73px, 0);
-  }
-  10% {
-    clip: rect(17px, 9999px, 85px, 0);
-  }
-  20% {
-    clip: rect(1px, 9999px, 5px, 0);
-  }
-  30% {
-    clip: rect(77px, 9999px, 81px, 0);
-  }
-  40% {
-    clip: rect(85px, 9999px, 60px, 0);
-  }
-  50% {
-    clip: rect(44px, 9999px, 43px, 0);
-  }
-  60% {
-    clip: rect(83px, 9999px, 62px, 0);
-  }
-  70% {
-    clip: rect(41px, 9999px, 89px, 0);
-  }
-  80% {
-    clip: rect(27px, 9999px, 97px, 0);
-  }
-  90% {
-    clip: rect(29px, 9999px, 53px, 0);
-  }
-  100% {
-    clip: rect(76px, 9999px, 5px, 0);
-  }
-}
+            0% {
+                clip: rect(68px, 9999px, 73px, 0);
+            }
+            10% {
+                clip: rect(17px, 9999px, 85px, 0);
+            }
+            20% {
+                clip: rect(1px, 9999px, 5px, 0);
+            }
+            30% {
+                clip: rect(77px, 9999px, 81px, 0);
+            }
+            40% {
+                clip: rect(85px, 9999px, 60px, 0);
+            }
+            50% {
+                clip: rect(44px, 9999px, 43px, 0);
+            }
+            60% {
+                clip: rect(83px, 9999px, 62px, 0);
+            }
+            70% {
+                clip: rect(41px, 9999px, 89px, 0);
+            }
+            80% {
+                clip: rect(27px, 9999px, 97px, 0);
+            }
+            90% {
+                clip: rect(29px, 9999px, 53px, 0);
+            }
+            100% {
+                clip: rect(76px, 9999px, 5px, 0);
+            }
+        }
 
-@keyframes noise-anim {
-  0% {
-    clip: rect(68px, 9999px, 73px, 0);
-  }
-  10% {
-    clip: rect(17px, 9999px, 85px, 0);
-  }
-  20% {
-    clip: rect(1px, 9999px, 5px, 0);
-  }
-  30% {
-    clip: rect(77px, 9999px, 81px, 0);
-  }
-  40% {
-    clip: rect(85px, 9999px, 60px, 0);
-  }
-  50% {
-    clip: rect(44px, 9999px, 43px, 0);
-  }
-  60% {
-    clip: rect(83px, 9999px, 62px, 0);
-  }
-  70% {
-    clip: rect(41px, 9999px, 89px, 0);
-  }
-  80% {
-    clip: rect(27px, 9999px, 97px, 0);
-  }
-  90% {
-    clip: rect(29px, 9999px, 53px, 0);
-  }
-  100% {
-    clip: rect(76px, 9999px, 5px, 0);
-  }
-}
+        @keyframes noise-anim {
+            0% {
+                clip: rect(68px, 9999px, 73px, 0);
+            }
+            10% {
+                clip: rect(17px, 9999px, 85px, 0);
+            }
+            20% {
+                clip: rect(1px, 9999px, 5px, 0);
+            }
+            30% {
+                clip: rect(77px, 9999px, 81px, 0);
+            }
+            40% {
+                clip: rect(85px, 9999px, 60px, 0);
+            }
+            50% {
+                clip: rect(44px, 9999px, 43px, 0);
+            }
+            60% {
+                clip: rect(83px, 9999px, 62px, 0);
+            }
+            70% {
+                clip: rect(41px, 9999px, 89px, 0);
+            }
+            80% {
+                clip: rect(27px, 9999px, 97px, 0);
+            }
+            90% {
+                clip: rect(29px, 9999px, 53px, 0);
+            }
+            100% {
+                clip: rect(76px, 9999px, 5px, 0);
+            }
+        }
 
+        /*-----------------------------------------------------------------*/
 
+        /* RESPONSIVE */
+
+        /*-----------------------------------------------------------------*/
 
         /* DECO MENU */
 
-        /* ------------------------------------------------------- */
+        /*-----------------------------------------------------*/
+        /*-----------------------------------------------------*/
 
-        /* Commun */
-
-        /* si < 800px */
+        /* si < 1000px */
 
         @media screen and ( max-width: 1000px) {
 
@@ -752,26 +665,14 @@
                 -webkit-box-direction: normal;
                 -ms-flex-direction: column;
                 flex-direction: column;
-                padding: 0;
+                height: 9em;
 
             }
-            .menu nav {
-                padding-top: 100px;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-            }
-            .menu nav a,
-            .menu aside a {
-                text-align: center;
-                padding: 1.5em 0;
-            }
-
+           
             .menu>a {
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                display: inline-block;
+               
+                margin-top: 38px;
+                margin-bottom: 32px;
             }
 
 
@@ -791,7 +692,10 @@
            
         }
 
-        /* si > 800px */
+        /*-----------------------------------------------------*/
+        /*-----------------------------------------------------*/
+
+        /* si > 1000px */
 
         @media screen and ( min-width: 1001px) {
             .iconeMenu {
@@ -799,6 +703,7 @@
             }
 
         }
+
     </style>
 </head>
 
@@ -853,8 +758,6 @@
                             </filter>
                         </defs>
                     </svg>
-
-                    <!-- <img src="img\logo_effet_3.png" alt="gnoks"> -->
                 </a>
                 <aside class="flex">
                     <a href="" class="glitch glitching" data-text="dribbble">dribbble</a>
