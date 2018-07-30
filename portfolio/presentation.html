@@ -162,7 +162,6 @@
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            opacity: .8;
         }
 
 
@@ -175,7 +174,6 @@
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            opacity: .8;
         }
 
         
@@ -453,11 +451,6 @@
 
         /*-----------------------------------------------------------------*/
 
-        nav:hover, aside:hover{
-            opacity: 1;
-            transition: linear .3s;
-        }
-
         .glitch:hover:after {
             content: attr(data-text);
             position: absolute;
@@ -666,24 +659,22 @@
                 -ms-flex-direction: column;
                 flex-direction: column;
                 height: 9em;
-
             }
-           
-            .menu>a {
-               
+
+            .menu .logo{
                 margin-top: 38px;
                 margin-bottom: 32px;
             }
-
-
-            .glitch:hover:after {
+           
+            
+            /* .glitch:hover:after {
                 display: none;
             }
 
 
             .glitch:hover:before {
                 display: none;
-            }
+            } */
 
             .bkg::before {
                 opacity: 1;
@@ -721,7 +712,7 @@
                     <a href="" class="glitch glitching" data-text="projets">projets</a>
                     <a href="" class="glitch glitching" data-text="curriculum">curriculum</a>
                 </nav>
-                <a href="">
+                <a href="" class="logo">
                     <img src="img/logo.png" alt="Yohann Cuenot" />
 
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
