@@ -10,7 +10,6 @@
         crossorigin="anonymous">
     <title>Portfolio</title>
     <style>
-
         /* ------------------------------------------------------- */
 
         /* RESET + MISE EN FORME */
@@ -35,6 +34,7 @@
             text-decoration: none;
             color: #e6e6e4;
         }
+
 
         /* ------------------------------------------------------- */
 
@@ -132,7 +132,8 @@
 
         /* ------------------------------------------------------- */
 
-        header, main{
+        header,
+        main {
             padding: 70px;
         }
 
@@ -179,13 +180,15 @@
             opacity: .7;
         }
 
-        nav>a, aside>a{
-            width:33.3%;
+        nav>a,
+        aside>a {
+            width: 33.3%;
             height: 100%;
+            text-shadow: 0px 0px 3px #e6e6e4;
         }
 
         /* ------------------------------------------------------- */
-        
+
         /* ANIMATION MENU ACTUALISATION */
 
         /* ------------------------------------------------------- */
@@ -202,7 +205,7 @@
                 transform: scaleY(.01);
 
                 transform: skew(90deg);
-                
+
 
             }
 
@@ -211,7 +214,7 @@
                 transform: scaleY(.5);
 
                 transform: skew(90deg);
-               
+
 
 
             }
@@ -220,7 +223,7 @@
                 transform: scaleY(1);
 
                 transform: skew(0deg);
-              
+
             }
         }
 
@@ -235,7 +238,7 @@
             90% {
                 -webkit-transform: scaleY(.5);
                 transform: scaleY(.5);
- 
+
                 transform: skew(90deg);
             }
             100% {
@@ -469,13 +472,12 @@
 
         /*-----------------------------------------------------------------*/
 
-       
         .glitch:hover:after {
             content: attr(data-text);
             position: absolute;
             left: 0;
             color: red;
-            opacity: .4;
+            opacity: .6;
             top: 0;
             overflow: hidden;
             animation: red-anim .3s linear alternate-reverse;
@@ -503,13 +505,12 @@
             }
         } */
 
-
         .glitch:hover:before {
             content: attr(data-text);
             position: absolute;
             /* left: 0; */
             color: #0017cf;
-            opacity: .4;
+            opacity: .6;
             top: 0;
             overflow: hidden;
             animation: blue-anim .3s linear alternate-reverse;
@@ -627,7 +628,7 @@
             }
         }
 
-     
+
 
         /*-----------------------------------------------------------------*/
 
@@ -638,6 +639,7 @@
         /* DECO MENU */
 
         /*-----------------------------------------------------*/
+
         /*-----------------------------------------------------*/
 
         /* si < 900px */
@@ -685,20 +687,19 @@
                 height: 9em;
             }
 
-            .menu .logo{
+            .menu .logo {
                 margin-top: 38px;
                 margin-bottom: 32px;
             }
-           
+
 
             /* .bkg::before {
                 opacity: .6;
             } */
-
-           
         }
 
         /*-----------------------------------------------------*/
+
         /*-----------------------------------------------------*/
 
         /* si > 900px */
@@ -709,7 +710,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -723,13 +723,13 @@
             </label>
             <div class="menu bkg flex">
                 <nav class="flex">
-                    <a href="" class="glitch glitching" data-text="hello">hello</a>
+                    <a href="" class="glitch glitching" data-text="hello">hello</a> 
                     <a href="" class="glitch glitching" data-text="projets">projets</a>
                     <a href="" class="glitch glitching" data-text="curriculum">curriculum</a>
                 </nav>
                 <a href="" class="logo">
                     <img src="img/logo.png" alt="Yohann Cuenot" />
-                
+
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                         <defs>
                             <filter id="glitch" x="0" y="0">
@@ -738,7 +738,8 @@
                                 <!-- "1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" -->
 
                                 <feOffset in="r" result="r" dx="-5">
-                                    <animate attributeName="dx" attributeType="XML" values="0; -2; 0; -4; -1; -2; 0 ;-1; 0" dur=".001s" repeatCount="indefinite"/>
+                                    <animate attributeName="dx" attributeType="XML" values="0; -2; 0; -4; -1; -2; 0 ;-1; 0" dur=".001s" repeatCount="indefinite"
+                                    />
                                     <!-- "0; -5; 0; -18; -2; -4; 0 ;-3; 0" -->
                                 </feOffset>
 
@@ -772,7 +773,7 @@
                 </aside>
             </div>
         </header>
-        <main>
+        <main class="content">
             <section>
                 <h1></h1>
                 <article></article>
@@ -784,6 +785,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/transition.js"></script>
 </body>
 
 </html>
