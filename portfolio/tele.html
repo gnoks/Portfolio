@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+    .main{
+        width: 100%;
+        height: 100vh;
+        background: gray;
+        position: relative;
+    }
+    .top{
+        top: 0;
+        position: absolute;
+        background: black;
+        transform: translate(0, -1000px);
+       
+
+    }
+    .bottom{
+        bottom: 0;
+        position: absolute;
+        background: black;
+        transform: translate(0, 1000px);
+        
+    }
+
+   .activetop{
+        background: black;
+        transform: translate(0, 0);
+        transition: transform .2s ease-in-out;
+        width: 100%;
+        height: 100vh;
+       
+
+    }
+    .activebottom{
+        background: black;
+        transform: translate(0, 0);
+        transition: transform .2s ease-in-out;
+        width: 100%;
+        height: 100vh;
+        
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="main" >
+        <a class="page" href="#">Click</a>
+    <div class="top "></div>
+    <div class="bottom "></div>
+    
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/tele.js"></script>
+</body>
+
+</html>

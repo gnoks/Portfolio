@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
-    <title>Portfolio</title>
+    <title>hello</title>
     <style>
         /* ------------------------------------------------------- */
 
@@ -132,8 +132,7 @@
 
         /* ------------------------------------------------------- */
 
-        header,
-        main {
+        header{
             padding: 70px;
         }
 
@@ -147,10 +146,10 @@
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
+            text-align: center;
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            text-align: center;
             font-size: 1.2em;
             letter-spacing: .05em;
             /* max-width: 1920px; */
@@ -182,9 +181,9 @@
 
         nav>a,
         aside>a {
-            width: 33.3%;
+            /* width: 33.3%; */
             height: 100%;
-            text-shadow: 0px 0px 3px #e6e6e4;
+            text-shadow: 0px 0px 1px #e6e6e4;
         }
 
         /* ------------------------------------------------------- */
@@ -430,7 +429,7 @@
         /*-----------------------------------------------------------------*/
 
         svg {
-            position: absolute;
+            display: none;
         }
 
         .logo {
@@ -628,6 +627,71 @@
             }
         }
 
+        /*-----------------------------------------------------------------*/
+
+        /* GESTION - PAGE */
+
+        /*-----------------------------------------------------------------*/
+
+        main{
+            margin: 30px 72.25px;
+            display: block;
+        }
+
+        .page{
+            display: none;
+            opacity: 0;
+        }
+
+        .page.hello{
+            display: block;
+            opacity: 1;
+        }
+
+        h1{
+            position: relative;
+            opacity: .6;
+            margin: 0;
+            font-size: 3em;
+        }
+
+         .top{
+        top: 0;
+        position: absolute;
+        background: black;
+        transform: translate(0, -1000px);
+       
+
+    }
+    .bottom{
+        bottom: 0;
+        position: absolute;
+        background: black;
+        transform: translate(0, 1000px);
+        
+    }
+
+   .activetop{
+        background: black;
+        transform: translate(0, 0);
+        transition: transform .5s ease-in-out;
+        width: 100%;
+        height: 100vh;
+        left:0;
+       
+
+    }
+    .activebottom{
+        background: black;
+        transform: translate(0, 0);
+        transition: transform .5s ease-in-out;
+        width: 100%;
+        height: 100vh;
+        left:0;
+        
+    }
+
+
 
 
         /*-----------------------------------------------------------------*/
@@ -676,6 +740,7 @@
                 -ms-flex-pack: center;
                 justify-content: center;
                 background-color: #0017cf;
+                z-index: 999;
 
             }
             .menu nav,
@@ -692,10 +757,10 @@
                 margin-bottom: 32px;
             }
 
-
-            /* .bkg::before {
-                opacity: .6;
-            } */
+            main{
+                margin-top:133px;
+            }
+           
         }
 
         /*-----------------------------------------------------*/
@@ -714,7 +779,7 @@
 </head>
 
 <body>
-    <div class="bkg">
+    <div class="bkg ">
         <header>
             <input type="checkbox" class="menu-checkbox" id="menu-checkbox">
             <label for="menu-checkbox" class="iconeMenu">
@@ -723,11 +788,11 @@
             </label>
             <div class="menu bkg flex">
                 <nav class="flex">
-                    <a href="" class="glitch glitching" data-text="hello">hello</a> 
-                    <a href="" class="glitch glitching" data-text="projets">projets</a>
-                    <a href="" class="glitch glitching" data-text="curriculum">curriculum</a>
+                    <a href="#hello" class="glitch glitching" data-text="hello">hello</a> 
+                    <a href="#projets" class="glitch glitching" data-text="projets">projets</a>
+                    <a href="#curriculum" class="glitch glitching" data-text="curriculum">curriculum</a>
                 </nav>
-                <a href="" class="logo">
+                <a href="#hello" class="logo">
                     <img src="img/logo.png" alt="Yohann Cuenot" />
 
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -773,11 +838,21 @@
                 </aside>
             </div>
         </header>
-        <main class="content">
-            <section>
-                <h1></h1>
+        <main>
+            <section class="page hello">
+                <h1 class="glitching" data-text="Hello">Hello</h1>
                 <article></article>
             </section>
+            <section class="page projets">
+                <h1 class="glitching" data-text="Projets">Projets</h1>
+                <article></article>
+            </section>
+            <section class="page curriculum">
+                    <h1 class="glitching" data-text="Curriculum">Curriculum</h1>
+                    <article></article>
+            </section>
+            <div class="top"></div>
+            <div class="bottom"></div>
         </main>
         <footer>
 
