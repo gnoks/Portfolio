@@ -10,7 +10,7 @@
 		
 		var options = $.extend({
 			"step"		: 2,			// How many times you want letters changed
-			"fps"		: 40,			// Frames Per Second
+			"fps"		: 80,			// Frames Per Second
 			"text"		: "", 			// Use this text instead of the contents
 			"callback"	: function(){}	// Run once the animation is complete
 		},prop)
@@ -140,3 +140,4 @@ $('.glitch').mouseenter(function(){
 
     $(this).shuffleLetters(); // shuffle the letter for fab FX
 });
+
