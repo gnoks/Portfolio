@@ -12,7 +12,7 @@ $(function () {
 
     $('nav a').click(function (e) {
         e.preventDefault();
-        $(' #canvas.active').removeClass('active')
+        $('#canvas.active').removeClass('active')
         speed = 100;
         i = $(this).index();
         $('.page.hello').animate({
