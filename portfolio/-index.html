@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <title>Portfolio</title>
+    <style>
+
+        /* ------------------------------------------------------- */
+
+        /* RESET + MISE EN FORME */
+
+        /* ------------------------------------------------------- */
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            width: 100%;
+            margin: 0 auto;
+            font: 1em 'Raleway', sans-serif;
+            color: #e6e6e4;
+            background-color: #161616;
+        }
+
+
+        /* ------------------------------------------------------- */
+
+        /* BACKGROUND + ANIM NOISE */
+
+        /* ------------------------------------------------------- */
+
+        .bkg::before {
+            content: "";
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("img/scanlines.png");
+            /* https://anatacreative.com/codepen/noise.png */
+            -webkit-animation: 1s infinite noise;
+            animation: 1s infinite noise;
+            pointer-events: none;
+            opacity: .5;
+        }
+
+        @-webkit-keyframes noise {
+            0%,
+            100% {
+                background-position: 0 0;
+            }
+            10% {
+                background-position: -5% -10%;
+            }
+            20% {
+                background-position: -15% 5%;
+            }
+            30% {
+                background-position: 7% -25%;
+            }
+            40% {
+                background-position: 20% 25%;
+            }
+            50% {
+                background-position: -25% 10%;
+            }
+            60% {
+                background-position: 15% 5%;
+            }
+            70% {
+                background-position: 0% 15%;
+            }
+            80% {
+                background-position: 25% 35%;
+            }
+            90% {
+                background-position: -10% 10%;
+            }
+        }
+
+        @keyframes noise {
+            0%,
+            100% {
+                background-position: 0 0;
+            }
+            10% {
+                background-position: -5% -10%;
+            }
+            20% {
+                background-position: -15% 5%;
+            }
+            30% {
+                background-position: 7% -25%;
+            }
+            40% {
+                background-position: 20% 25%;
+            }
+            50% {
+                background-position: -25% 10%;
+            }
+            60% {
+                background-position: 15% 5%;
+            }
+            70% {
+                background-position: 0% 15%;
+            }
+            80% {
+                background-position: 25% 35%;
+            }
+            90% {
+                background-position: -10% 10%;
+            }
+        }
+
+        svg{
+        transform-origin:center;
+        /*   transition:.5s ease-in-out; */
+        }
+        .nofill{
+        fill:transparent
+        }
+        .canvas {
+        height:480px;
+        width:750px;
+        margin:auto;
+        }
+      
+        #mouse {
+        position:absolute;
+        fill:#F1F1C7;
+        }
+
+    .bkgLogo{
+    background-repeat: repeat-x repeat-y;
+    height: 100vh;
+    background-image: url("img/logo.png");
+    z-index: -1000;
+    opacity: .6;
+}
+
+.logo img{
+    width: 90px;
+    height: 99px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    opacity: .5;
+}
+
+svg {
+            position: absolute;
+           
+        }
+
+        .logo {
+            -moz-filter: url("#glitch");
+            -webkit-filter: url("#glitch");
+            filter: url("#glitch");
+            
+        }
+
+        #glitch {
+            -webkit-animation: kaboom 1s alternate infinite;
+            animation: kaboom 1s alternate infinite;
+        }
+
+        @-webkit-keyframes kaboom {
+            90% {
+                -webkit-transform: scale(0.0);
+                transform: scale(0.0);
+            }
+            100% {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes kaboom {
+            90% {
+                -webkit-transform: scale(0.0);
+                transform: scale(0.0);
+            }
+            100% {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+
+
+</style>
+</head>
+
+<body>
+    
+    <div class="bkg">
+        <div class="bkgLogo"></div>
+    </div>
+
+    <div class="logo"><img src="img/logo.png" alt=""></div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="glitch" x="0" y="0">
+
+                <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+                <!-- "1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" -->
+
+                <feOffset in="r" result="r" dx="-5">
+                    <animate attributeName="dx" attributeType="XML" values="0; -2; 0; -8; -1; -2; 0 ;-1; 0" dur=".001s" repeatCount="indefinite"/>
+                    <!-- "0; -5; 0; -18; -2; -4; 0 ;-3; 0" -->
+                </feOffset>
+
+                <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+                <!-- "0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" -->
+                <feOffset in="g" result="g" dx="-5" dy="1">
+                    <animate attributeName="dx" attributeType="XML" values="0; 0; 0; -1; 0; 2; 0 ; -1; 0" dur=".001s" repeatCount="indefinite"
+                    />
+                    <!-- "0; 0; 0; -3; 0; 8; 0 ;-1; 0" -->
+                </feOffset>
+
+                <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+
+                <feOffset in="b" result="b" dx="5" dy="2">
+                    <animate attributeName="dx" attributeType="XML" values="0; 1; -1; 2; 0; 1; 0 ; 8; 0" dur=".001s" repeatCount="indefinite"
+                    />
+                    <!-- "0; 3; -1; 4; 0; 2; 0 ; 18; 0" -->
+                </feOffset>
+
+                <feBlend in="r" in2="g" mode="screen" result="blend" />
+                <feBlend in="blend" in2="b" mode="screen" result="blend" />
+
+            </filter>
+        </defs>
+    </svg>
+
+
+
+
+
+
+    <div class="canvas">
+        <svg width="30" height="30" viewBox="-5 -5 40 40">
+             <path d="M0.5,0.5 L0.5,29.5 L29.5,29.5 L29.5,0.5 L0.5,0.5 Z M4.5,4.5 L25.5,4.5 L25.5,25.5 L4.5,25.5 L4.5,4.5 Z" class="nofill" stroke="#F0DCCF"></path>
+              <polygon id="filled" fill="#F0DCCF" points="30 0 30 30 0 30 5 25 25 25 25 4"></polygon>
+          </svg>
+        </div>
+          <div id="mouse"><svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12 ,2Z"></path>
+        </svg>
+    </div>
+<script type="text/javascript">
+var colors = [
+  "#A9F1DF",
+  "#FFBBBB",
+  "#D8D5FF",
+  "#1EAE98",
+  "#BFF098",
+  "#6FD6FF",
+  "#C6EA8D",
+  "#FE90AF",
+  "#F1EAB9"
+];
+
+for(var i=0;i<350;i++){
+  var color=colors[Math.floor(Math.random()*colors.length)];
+  $('.canvas').append('<svg width="30" height="30" viewBox="-15 -15 60 60" id="rect'+i+'"><path d="M0.5,0.5 L0.5,29.5 L29.5,29.5 L29.5,0.5 L0.5,0.5 Z M4.5,4.5 L25.5,4.5 L25.5,25.5 L4.5,25.5 L4.5,4.5 Z" class="nofill" stroke="'+color+'" stroke-opacity="0.4"></path><polygon id="filled" fill="'+color+'" points="30 0 30 30 0 30 5 25 25 25 25 4"></polygon></svg>');
+}
+
+var modifyXStr=$('.canvas').css('marginLeft');
+var modifyX=Number(modifyXStr.slice(0,modifyXStr.length-2));
+function getCoords(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+  $('#mouse').css('top',y-12+'px');
+  $('#mouse').css('left',x-12+'px');
+  for(var i=0;i<350;i++) {
+    var rectx=i%25*30+15;
+    var recty=Math.floor(i/25)*30+15;
+    var angleDeg = Math.atan2(y - recty, x - modifyX - rectx) * 180 / Math.PI-45; 
+    // var s = Math.sqrt((y - recty)*(y - recty)+(x - rectx)+(x - rectx));
+    // s = 1-1/900*s;
+    $('#rect'+i).css('transform','rotate('+angleDeg+'deg)');
+    // $('#rect'+i).css('opacity',s);
+  }
+}
+</script>
+           
+</body>
+
+</html>

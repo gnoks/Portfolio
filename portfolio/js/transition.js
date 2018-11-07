@@ -7,8 +7,7 @@ $(function () {
         $('.page').addClass('projets');
     }
 
-
-  
+    
 
     $('nav a').click(function (e) {
         e.preventDefault();
@@ -50,6 +49,13 @@ $(function () {
     });
 });
 
+$(document).ready(function(){
+    $("nav a").click(function(){
+        $("a").removeClass("active");
+        $(this).addClass("active");
+    });
+});
+
 
 
 function domloaded(){
@@ -61,7 +67,7 @@ function domloaded(){
             if(i % pixCount === 0) {
                 j++;
             }
-            ctx.fillStyle= 'hsl(' + 360 * Math.random() + ', 90%, 5%)';
+            ctx.fillStyle= 'hsl(' + 360 * Math.random() + ', 90%, 6%)';
             ctx.fillRect(i * pixSize, j * pixSize, 200, 200);
         }
     }
